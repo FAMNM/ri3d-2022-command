@@ -8,13 +8,15 @@ import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.RobotContainer;
 
-public class ArcadeDrive extends CommandBase {
+public class RunShooter extends CommandBase {
 
   XboxController driver = new XboxController(0);
-  
-  /** Creates a new ArcadeDrive. */
-  public ArcadeDrive() {
-    addRequirements(RobotContainer.driveTrain);
+
+
+  /** Creates a new RunShooter. */
+  public RunShooter() {
+    // Use addRequirements() here to declare subsystem dependencies.
+    addRequirements(RobotContainer.shooter);
   }
 
   // Called when the command is initially scheduled.
@@ -24,13 +26,25 @@ public class ArcadeDrive extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    RobotContainer.driveTrain.setSpeed(driver.getRawAxis(1), driver.getRawAxis(4));
+
+    if (driver.getLeftTriggerAxis() >= 0.5) {
+
+      RobotContainer.shooter.startWheels();
+
+    } else {
+
+      RobotContainer.shooter.stopWheels();
+
+    }
+
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    // RobotContainer.driveTrain.setSpeed(0, 0);
+
+    RobotContainer.shooter.stopWheels();
+
   }
 
   // Returns true when the command should end.

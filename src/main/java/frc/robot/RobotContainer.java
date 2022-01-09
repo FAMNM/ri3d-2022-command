@@ -7,8 +7,10 @@ package frc.robot;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.ArcadeDrive;
+import frc.robot.commands.RunShooter;
 import frc.robot.commands.TrackBall;
 import frc.robot.subsystems.DriveTrain;
+import frc.robot.subsystems.Shooter;
 import frc.robot.subsystems.VisionProcessor;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
@@ -23,34 +25,35 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...
 
 
-  private final XboxController xboxLeft = new XboxController(0);
-  private final XboxController xboxRight = new XboxController(1);
+  private final XboxController driver = new XboxController(0);
+  private final XboxController manipulator = new XboxController(1);
 
-  private final JoystickButton xboxLA = new JoystickButton(xboxLeft, 1);
-  private final JoystickButton xboxLB = new JoystickButton(xboxLeft, 2);
-  private final JoystickButton xboxLX = new JoystickButton(xboxLeft, 3);
-  private final JoystickButton xboxLY = new JoystickButton(xboxLeft, 4);
-  private final JoystickButton xboxLLeftButton = new JoystickButton(xboxLeft, 5);
-  private final JoystickButton xboxLRightButton = new JoystickButton(xboxLeft, 6);
-  private final JoystickButton xboxLBack = new JoystickButton(xboxLeft, 7);
-  private final JoystickButton xboxLStart = new JoystickButton(xboxLeft, 8);
-  private final JoystickButton xboxLJoystickButtonLeft = new JoystickButton(xboxLeft, 9);
-  private final JoystickButton xboxLJoystickButtonRight = new JoystickButton(xboxLeft, 10);
+  private final JoystickButton driverA = new JoystickButton(driver, 1);
+  private final JoystickButton driverB = new JoystickButton(driver, 2);
+  private final JoystickButton driverX = new JoystickButton(driver, 3);
+  private final JoystickButton driverY = new JoystickButton(driver, 4);
+  private final JoystickButton driverLeftButton = new JoystickButton(driver, 5);
+  private final JoystickButton driverRightButton = new JoystickButton(driver, 6);
+  private final JoystickButton driverBack = new JoystickButton(driver, 7);
+  private final JoystickButton driverStart = new JoystickButton(driver, 8);
+  private final JoystickButton driverJoystickButtonLeft = new JoystickButton(driver, 9);
+  private final JoystickButton driverJoystickButtonRight = new JoystickButton(driver, 10);
 
-  private final JoystickButton xboxRA = new JoystickButton(xboxRight, 1);
-  private final JoystickButton xboxRB = new JoystickButton(xboxRight, 2);
-  private final JoystickButton xboxRX = new JoystickButton(xboxRight, 3);
-  private final JoystickButton xboxRY = new JoystickButton(xboxRight, 4);
-  private final JoystickButton xboxRRightButton = new JoystickButton(xboxRight, 5);
-  private final JoystickButton xboxRLeftButton = new JoystickButton(xboxRight, 6);
-  private final JoystickButton xboxRBack = new JoystickButton(xboxRight, 7);
-  private final JoystickButton xboxRStart = new JoystickButton(xboxRight, 8);
-  private final JoystickButton xboxRJoystickButtonLeft = new JoystickButton(xboxRight, 9);
-  private final JoystickButton xboxRJoystickButtonRight = new JoystickButton(xboxRight, 10);
+  private final JoystickButton manipulatorA = new JoystickButton(manipulator, 1);
+  private final JoystickButton manipulatorB = new JoystickButton(manipulator, 2);
+  private final JoystickButton manipulatorX = new JoystickButton(manipulator, 3);
+  private final JoystickButton manipulatorY = new JoystickButton(manipulator, 4);
+  private final JoystickButton manipulatorRightButton = new JoystickButton(manipulator, 5);
+  private final JoystickButton manipulatorLeftButton = new JoystickButton(manipulator, 6);
+  private final JoystickButton manipulatorBack = new JoystickButton(manipulator, 7);
+  private final JoystickButton manipulatorStart = new JoystickButton(manipulator, 8);
+  private final JoystickButton manipulatorJoystickButtonLeft = new JoystickButton(manipulator, 9);
+  private final JoystickButton manipulatorJoystickButtonRight = new JoystickButton(manipulator, 10);
 
 
   public static DriveTrain driveTrain = new DriveTrain();
   public static VisionProcessor visionProcessor = new VisionProcessor();
+  public static Shooter shooter = new Shooter();
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -65,8 +68,17 @@ public class RobotContainer {
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
   private void configureButtonBindings() {
+
+    // Default Commands
     driveTrain.setDefaultCommand(new ArcadeDrive());
-    xboxLRightButton.whenHeld(new TrackBall());
+    shooter.setDefaultCommand(new RunShooter());
+    
+    // Button Bindings
+    driverRightButton.whenHeld(new TrackBall());
+    
+
+
+
   }
 
   /**

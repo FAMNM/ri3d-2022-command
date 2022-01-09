@@ -4,21 +4,6 @@
 
 package frc.robot;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
-import org.opencv.core.Core;
-import org.opencv.core.Mat;
-import org.opencv.core.MatOfPoint;
-import org.opencv.core.Point;
-import org.opencv.core.Scalar;
-import org.opencv.imgproc.Imgproc;
-import org.opencv.imgproc.Moments;
-
-import edu.wpi.first.cameraserver.CameraServer;
-import edu.wpi.first.cscore.CvSink;
-import edu.wpi.first.cscore.CvSource;
 import edu.wpi.first.cscore.UsbCamera;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.XboxController;
@@ -33,9 +18,6 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
  * project.
  */
 public class Robot extends TimedRobot {
-
-  public static int visionXLocation = 0;
-  public static int visionYLocation = 0;
   
   private Command m_autonomousCommand;
   private RobotContainer m_robotContainer;

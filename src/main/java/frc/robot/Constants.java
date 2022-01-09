@@ -15,13 +15,16 @@ package frc.robot;
 public final class Constants {
 
     // Drive Train Motors
-    public static int DRIVE_TRAIN_MOTOR_1 = 0;
-    public static int DRIVE_TRAIN_MOTOR_2 = 1;
-    public static int DRIVE_TRAIN_MOTOR_3 = 2;
-    public static int DRIVE_TRAIN_MOTOR_4 = 3;
+    public static final int DRIVE_TRAIN_MOTOR_1 = 0;
+    public static final int DRIVE_TRAIN_MOTOR_2 = 1;
+    public static final int DRIVE_TRAIN_MOTOR_3 = 2;
+    public static final int DRIVE_TRAIN_MOTOR_4 = 3;
 
-    public static int cameraWidth = 320;
-    public static int cameraHeight = 240;
+    public static final int CAMERA_WIDTH = 320;
+    public static final int CAMERA_HEIGHT = 240;
+
+    public static final double SHOOTER_TOP_WHEEL_SPEED = .75;
+    public static final double SHOOTER_BOTTOM_WHEEL_SPEED = .85;
 
 
 }
