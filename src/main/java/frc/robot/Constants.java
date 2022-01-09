@@ -28,4 +28,6 @@ public final class Constants {
 
     public static final double SHOOTER_HIGH_SPEED = 0.85;
     public static final double SHOOTER_LOW_SPEED = 0.4;
+
+    public static final double INTAKE_SPEED = 0.25;
 }
