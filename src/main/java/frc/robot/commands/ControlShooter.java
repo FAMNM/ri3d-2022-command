@@ -8,13 +8,13 @@ import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.RobotContainer;
 
-public class RunShooter extends CommandBase {
+public class ControlShooter extends CommandBase {
 
   XboxController driver = new XboxController(0);
 
 
   /** Creates a new RunShooter. */
-  public RunShooter() {
+  public ControlShooter() {
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(RobotContainer.shooter);
   }

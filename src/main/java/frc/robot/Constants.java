@@ -23,8 +23,9 @@ public final class Constants {
     public static final int CAMERA_WIDTH = 320;
     public static final int CAMERA_HEIGHT = 240;
 
-    public static final double SHOOTER_TOP_WHEEL_SPEED = .75;
+    public static final double SHOOTER_TOP_WHEEL_SPEED = .85;
     public static final double SHOOTER_BOTTOM_WHEEL_SPEED = .85;
 
-
+    public static final double SHOOTER_HIGH_SPEED = 0.85;
+    public static final double SHOOTER_LOW_SPEED = 0.4;
 }

@@ -42,5 +42,10 @@ public class Shooter extends SubsystemBase {
 
   }
 
+  public void setWheels(double speed) {
+    upperWheel.set(speed);
+    lowerWheel.set(speed);
+  }
+
 
 }

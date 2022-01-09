@@ -7,8 +7,10 @@ package frc.robot;
 import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.ArcadeDrive;
-import frc.robot.commands.RunShooter;
+import frc.robot.commands.ControlShooter;
+import frc.robot.commands.ShootBall;
 import frc.robot.commands.TrackBall;
+import frc.robot.subsystems.CargoPusher;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.Shooter;
 import frc.robot.subsystems.VisionProcessor;
@@ -54,6 +56,7 @@ public class RobotContainer {
   public static DriveTrain driveTrain = new DriveTrain();
   public static VisionProcessor visionProcessor = new VisionProcessor();
   public static Shooter shooter = new Shooter();
+  public static CargoPusher cargoPusher = new CargoPusher();
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -71,13 +74,12 @@ public class RobotContainer {
 
     // Default Commands
     driveTrain.setDefaultCommand(new ArcadeDrive());
-    shooter.setDefaultCommand(new RunShooter());
+    shooter.setDefaultCommand(new ControlShooter());
     
     // Button Bindings
     driverRightButton.whenHeld(new TrackBall());
-    
-
-
+    driverStart.whenPressed(new ShootBall(Constants.SHOOTER_HIGH_SPEED));
+    driverBack.whenPressed(new ShootBall(Constants.SHOOTER_LOW_SPEED));
 
   }
 
