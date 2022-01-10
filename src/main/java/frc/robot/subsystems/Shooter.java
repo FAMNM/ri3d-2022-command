@@ -31,7 +31,7 @@ public class Shooter extends SubsystemBase {
   public void startWheels() {
 
     upperWheel.set(Constants.SHOOTER_TOP_WHEEL_SPEED);
-    lowerWheel.set(Constants.SHOOTER_TOP_WHEEL_SPEED);
+    lowerWheel.set(-Constants.SHOOTER_TOP_WHEEL_SPEED);
 
   }
 
@@ -44,7 +44,7 @@ public class Shooter extends SubsystemBase {
 
   public void setWheels(double speed) {
     upperWheel.set(speed);
-    lowerWheel.set(speed);
+    lowerWheel.set(-speed);
   }
 
 

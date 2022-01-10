@@ -10,11 +10,14 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class CargoPusher extends SubsystemBase {
 
   Servo cargoPusher;
+  Servo cargoPusher2;
 
   /** Creates a new CargoPusher. */
   public CargoPusher() {
 
     cargoPusher = new Servo(0);
+    cargoPusher2 = new Servo(1);
+  
   }
 
   @Override
@@ -24,13 +27,15 @@ public class CargoPusher extends SubsystemBase {
 
   public void servoOn() {
 
-    cargoPusher.set(1);
+    cargoPusher.set(.6);
+    cargoPusher2.set(.5);
 
   }
 
   public void servoOff() {
 
-    cargoPusher.set(0);
+    cargoPusher.set(.1);
+    cargoPusher2.set(1);
 
   }
 
