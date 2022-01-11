@@ -98,7 +98,10 @@ public class Robot extends TimedRobot {
   /** This function is called periodically during operator control. */
   @Override
   public void teleopPeriodic() {
-    SmartDashboard.putBoolean("button 5", xboxLeft.getRawButton(6));
+
+    SmartDashboard.putBoolean("A", xboxLeft.getAButton());
+    //System.out.println("XboxLeft A button: " + xboxLeft.getAButton());
+    //SmartDashboard.putNumber("key", value)
   }
 
   @Override

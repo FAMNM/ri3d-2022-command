@@ -42,7 +42,7 @@ public final class Constants {
     public static final double SERVO_2_ACTIVE_LOCATION= 0.45;
     public static final double SERVO_2_INACTIVE_LOCATION = .8;
 
-    public static final double ELEVATOR_SPEED = .15;
+    public static final double ELEVATOR_SPEED = .3;
 
     public static final double WINCH_SPEED = 1;
 

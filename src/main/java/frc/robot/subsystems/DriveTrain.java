@@ -36,6 +36,7 @@ public class DriveTrain extends SubsystemBase {
     rightDrive = new MotorControllerGroup(rightDrive1, rightDrive2);
 
     differentialDrive = new DifferentialDrive(leftDrive, rightDrive);
+    differentialDrive.setSafetyEnabled(false);
   }
 
   @Override
