@@ -5,7 +5,9 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.Servo;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants;
 
 public class CargoPusher extends SubsystemBase {
 
@@ -15,27 +17,30 @@ public class CargoPusher extends SubsystemBase {
   /** Creates a new CargoPusher. */
   public CargoPusher() {
 
-    cargoPusher = new Servo(0);
-    cargoPusher2 = new Servo(1);
+    cargoPusher = new Servo(0); // NOT COLORED IN HEAT SYNC
+    cargoPusher2 = new Servo(1); // COLORED IN HEAT SYNC (BLACK SHARPIE ON WHITE)
   
   }
 
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
+    SmartDashboard.putString("DB/String 0", "Servo 1 Location: " + cargoPusher.get());
+    SmartDashboard.putString("DB/String 1", "Servo 2 Location: " + cargoPusher2.get());
+
   }
 
   public void servoOn() {
 
-    cargoPusher.set(.6);
-    cargoPusher2.set(.5);
+    cargoPusher.set(Constants.SERVO_1_ACTIVE_LOCATION);
+    cargoPusher2.set(Constants.SERVO_2_ACTIVE_LOCATION);
 
   }
 
   public void servoOff() {
 
-    cargoPusher.set(.1);
-    cargoPusher2.set(1);
+    cargoPusher.set(Constants.SERVO_1_INACTIVE_LOCATION);
+    cargoPusher2.set(Constants.SERVO_2_INACTIVE_LOCATION);
 
   }
 

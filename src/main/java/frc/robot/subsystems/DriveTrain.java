@@ -29,7 +29,7 @@ public class DriveTrain extends SubsystemBase {
     rightDrive1 = new WPI_VictorSPX(8);
     rightDrive2 = new WPI_VictorSPX(9);
 
-    rightDrive1.setInverted(true);
+    rightDrive1.setInverted(false);
     rightDrive2.setInverted(true);
 
     leftDrive = new MotorControllerGroup(leftDrive1, leftDrive2);
@@ -49,5 +49,11 @@ public class DriveTrain extends SubsystemBase {
     } else {
       differentialDrive.arcadeDrive(0, 0);
     }
+  }
+
+  public void tankDrive(double leftSpeed, double rightSpeed) {
+
+    differentialDrive.tankDrive(leftSpeed, rightSpeed);
+
   }
 }

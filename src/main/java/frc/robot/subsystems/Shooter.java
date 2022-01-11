@@ -20,6 +20,7 @@ public class Shooter extends SubsystemBase {
 
     upperWheel = new WPI_VictorSPX(4);
     lowerWheel = new WPI_VictorSPX(5);
+    lowerWheel.setInverted(true);
 
   }
 
@@ -30,9 +31,11 @@ public class Shooter extends SubsystemBase {
 
   public void startWheels() {
 
-    upperWheel.set(Constants.SHOOTER_TOP_WHEEL_SPEED);
-    lowerWheel.set(-Constants.SHOOTER_TOP_WHEEL_SPEED);
+    // upperWheel.set(Constants.SHOOTER_HIGH_SPEED);
+    // lowerWheel.set(Constants.SHOOTER_HIGH_SPEED); // was neg
 
+    upperWheel.set(Constants.SHOOTER_TOP_WHEEL_SPEED);
+    lowerWheel.set(Constants.SHOOTER_BOTTOM_WHEEL_SPEED);
   }
 
   public void stopWheels() {
@@ -44,7 +47,7 @@ public class Shooter extends SubsystemBase {
 
   public void setWheels(double speed) {
     upperWheel.set(speed);
-    lowerWheel.set(-speed);
+    lowerWheel.set(speed); // was neg
   }
 
 
