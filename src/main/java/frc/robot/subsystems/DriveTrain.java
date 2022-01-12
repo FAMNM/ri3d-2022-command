@@ -46,7 +46,7 @@ public class DriveTrain extends SubsystemBase {
 
   public void setSpeed(double xSpeed, double zRotation) {
     if(Math.abs(xSpeed) >= 0.05 || Math.abs(zRotation) >= 0.05) {
-      differentialDrive.arcadeDrive(xSpeed, zRotation);
+      differentialDrive.arcadeDrive(.70 * xSpeed, .5* zRotation);
     } else {
       differentialDrive.arcadeDrive(0, 0);
     }
@@ -54,7 +54,7 @@ public class DriveTrain extends SubsystemBase {
 
   public void tankDrive(double leftSpeed, double rightSpeed) {
 
-    differentialDrive.tankDrive(leftSpeed, rightSpeed);
+    differentialDrive.tankDrive(.75 * leftSpeed, rightSpeed);
 
   }
 }

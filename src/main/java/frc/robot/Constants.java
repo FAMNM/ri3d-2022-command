@@ -30,7 +30,7 @@ public final class Constants {
     public static final double SHOOTER_HIGH_SPEED = 0.3;
     public static final double SHOOTER_LOW_SPEED = 0.3;
 
-    public static final double INTAKE_SPEED = .5;
+    public static final double INTAKE_SPEED = 1;
 
     public static final double SERVO_1_ACTIVE_LOCATION = .3;
     public static final double SERVO_1_INACTIVE_LOCATION = 0;
