@@ -5,30 +5,39 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.Constants;
 import frc.robot.RobotContainer;
 
-public class MoveForward extends CommandBase {
-  /** Creates a new MoveForward. */
-  public MoveForward() {
+public class RunIntakeReverse extends CommandBase {
+  /** Creates a new RunIntakeReverse. */
+  public RunIntakeReverse() {
     // Use addRequirements() here to declare subsystem dependencies.
-    addRequirements(RobotContainer.driveTrain);
+    addRequirements(RobotContainer.intake);
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    RobotContainer.driveTrain.tankDrive(-0.75, -0.75);
-  }
 
+    RobotContainer.intake.setSpeed(-1 * Constants.INTAKE_SPEED);
+    
+  }
+  
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    RobotContainer.driveTrain.tankDrive(-0.75, -0.75);
+
+    RobotContainer.intake.setSpeed(-1 * Constants.INTAKE_SPEED);
+
   }
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void end(boolean interrupted) {
+
+    RobotContainer.intake.setSpeed(0);
+
+  }
 
   // Returns true when the command should end.
   @Override

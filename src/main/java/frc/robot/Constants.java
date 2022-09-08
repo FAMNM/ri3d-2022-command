@@ -23,14 +23,22 @@ public final class Constants {
     public static final int CAMERA_WIDTH = 320;
     public static final int CAMERA_HEIGHT = 240;
 
-    public static final double SHOOTER_TOP_WHEEL_SPEED = .3;
-    public static final double SHOOTER_BOTTOM_WHEEL_SPEED = .3;
+    // 30/20 works atm
 
-    // public static final double SHOOTER_HIGH_SPEED = 0.85; CHANGE BACK FOR FINAL ROBOT
-    public static final double SHOOTER_HIGH_SPEED = 0.3;
-    public static final double SHOOTER_LOW_SPEED = 0.3;
+    public static final double SHOOTER_TOP_WHEEL_SPEED = .30;
+    public static final double SHOOTER_BOTTOM_WHEEL_SPEED = .20;
 
-    public static final double INTAKE_SPEED = 1;
+    public static final double SHOOTER_HIGH_SPEED = .27;
+    public static final double SHOOTER_LOW_SPEED = .27;
+    // public static final double SHOOTER_TOP_WHEEL_SPEED = .35;
+    // public static final double SHOOTER_BOTTOM_WHEEL_SPEED = .35;
+
+    // public static final double SHOOTER_HIGH_SPEED = .35;
+    // public static final double SHOOTER_LOW_SPEED = .35;
+
+
+
+    public static final double INTAKE_SPEED = .35;
 
     public static final double SERVO_1_ACTIVE_LOCATION = .3;
     public static final double SERVO_1_INACTIVE_LOCATION = 0;

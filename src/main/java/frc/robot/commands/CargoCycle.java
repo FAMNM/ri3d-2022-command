@@ -16,7 +16,7 @@ public class CargoCycle extends SequentialCommandGroup {
     // Add your commands in the addCommands() call, e.g.
     // addCommands(new FooCommand(), new BarCommand());
     addCommands(
-      new WaitCommand(3.0), 
+      new WaitCommand(2.5), 
       new CargoUp(), 
       new WaitCommand(1.5), 
       new CargoDown()

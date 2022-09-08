@@ -13,6 +13,7 @@ import frc.robot.commands.CargoUp;
 import frc.robot.commands.ControlShooter;
 import frc.robot.commands.ElevatorControl;
 import frc.robot.commands.RunIntake;
+import frc.robot.commands.RunIntakeReverse;
 import frc.robot.commands.ShootBall;
 import frc.robot.commands.TankDrive;
 import frc.robot.commands.WinchControl;
@@ -86,8 +87,8 @@ public class RobotContainer {
   private void configureButtonBindings() {
 
     // Default Commands
-    driveTrain.setDefaultCommand(new ArcadeDrive());
-    // driveTrain.setDefaultCommand(new TankDrive());
+    // driveTrain.setDefaultCommand(new ArcadeDrive());
+    driveTrain.setDefaultCommand(new TankDrive());
     shooter.setDefaultCommand(new ControlShooter());
     elevator.setDefaultCommand(new ElevatorControl());
     winch.setDefaultCommand(new WinchControl());
@@ -100,8 +101,10 @@ public class RobotContainer {
     driverA.whenPressed(new CargoUp());
     driverB.whenPressed(new CargoDown());
     driverRightButton.whileHeld(new RunIntake());
+    driverLeftButton.whileHeld(new RunIntakeReverse());
     // driverJoystickButtonRight.whenPressed(new TankDrive());
     // driverJoystickButtonLeft.whenPressed(new ArcadeDrive());
+    // manipulatorY.whenPressed(new BaselineAuton());
 
   }
 
@@ -113,5 +116,6 @@ public class RobotContainer {
   public Command getAutonomousCommand() {
     // An ExampleCommand will run in autonomous
     return null;
+    // return new BaselineAuton();
   }
 }

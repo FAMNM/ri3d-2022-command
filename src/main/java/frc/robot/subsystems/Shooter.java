@@ -46,8 +46,10 @@ public class Shooter extends SubsystemBase {
   }
 
   public void setWheels(double speed) {
-    upperWheel.set(speed);
-    lowerWheel.set(speed); // was neg
+    // upperWheel.set(speed);
+    // lowerWheel.set(speed); // was neg
+    upperWheel.set(Constants.SHOOTER_TOP_WHEEL_SPEED);
+    lowerWheel.set(Constants.SHOOTER_BOTTOM_WHEEL_SPEED); // was neg
   }
 
 

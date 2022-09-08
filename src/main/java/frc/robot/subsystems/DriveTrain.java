@@ -42,11 +42,11 @@ public class DriveTrain extends SubsystemBase {
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
-  }
+  } // famnms really awesome dude
 
   public void setSpeed(double xSpeed, double zRotation) {
     if(Math.abs(xSpeed) >= 0.05 || Math.abs(zRotation) >= 0.05) {
-      differentialDrive.arcadeDrive(.70 * xSpeed, .5* zRotation);
+      differentialDrive.arcadeDrive(.6 * xSpeed, .5* zRotation);
     } else {
       differentialDrive.arcadeDrive(0, 0);
     }

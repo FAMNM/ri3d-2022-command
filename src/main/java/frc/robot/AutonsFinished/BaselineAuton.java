@@ -22,7 +22,7 @@ public class BaselineAuton extends SequentialCommandGroup {
     addCommands(
       new ShootBall(Constants.SHOOTER_HIGH_SPEED),
       new ParallelDeadlineGroup(
-        new WaitCommand(2), // Deadline command --- change 2 to correct time
+        new WaitCommand(1.5), // Deadline command --- change 2 to correct time
         new MoveForward())
     );
   }
